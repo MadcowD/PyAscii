@@ -1,5 +1,5 @@
-var w = 30;
-var h = 10;
+var w;
+var h;
 
 var player = [0,0];
 
@@ -15,6 +15,7 @@ function main() {
 
   world[player[1]][player[0]] = "@";
 
+  //you shouldn't need to change below here, instead insert things while it's still an array, above
   var world_str = world.map(function(x){
     return x.join("");
   }).join("<br />");
@@ -44,6 +45,12 @@ document.addEventListener("keydown", function(event) {
     }
 }, true);
 
+function update_world_dimensions() {
+    w = document.getElementById("world-width").value;
+    h = document.getElementById("world-height").value;
+}
+
 window.onload = function() {
+	update_world_dimensions();
 	setInterval(main, 50);
 }

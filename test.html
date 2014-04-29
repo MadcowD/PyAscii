@@ -1,24 +1,21 @@
 <html>
 	<head>
 		<script src="test.js"></script>
-		<style>
-			body {
-			}
+		<style type="text/css">
 			div#game {
 				font-family: "Courier New";}
-				white-space: pre;
-
 				border: 1px solid black;
 				width: 350px;
-				padding-left: 20px;
-				padding-top: 10px;
-				padding-bottom: 30px;
 			}
 		</style>
 	</head>
 	
 	<body>
 		<h1>Use the arrow keys.</h1>
+		World height: <input type="number" id="world-height" value="10" onchange="update_world_dimensions()">
+		<span style="width: 20px; display: inline-block;"></span>
+		</input>Width: <input type="number" id="world-width" value="30" onchange="update_world_dimensions()"></input>
+		
 		<div id="game"></div>
 	</body>
 </html>
