@@ -17,7 +17,7 @@ function main() {
 
   var world_str = world.map(function(x){
     return x.join("");
-  }).join("\n");
+  }).join("<br />");
   document.getElementById("game").innerHTML = world_str;
 }
 
