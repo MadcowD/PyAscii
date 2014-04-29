@@ -13,12 +13,12 @@ function main() {
     world.push(row);
   }
 
-  world[player[1]][player[0]] = "!";
+  world[player[1]][player[0]] = "@";
 
   var world_str = world.map(function(x){
     return x.join("");
   }).join("\n");
-  document.body.innerHTML = world_str;
+  document.getElementById("game").innerHTML = world_str;
 }
 
 document.addEventListener("keydown", function(event) {
@@ -44,4 +44,6 @@ document.addEventListener("keydown", function(event) {
     }
 }, true);
 
-setInterval(main, 50);
+window.onload = function() {
+	setInterval(main, 50);
+}
