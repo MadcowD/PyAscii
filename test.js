@@ -1,7 +1,7 @@
 var w;
 var h;
 
-var player = {body: "@", color: "FF0000", pos: [0,0]};
+var player = {body: "@", color: ["FF0000", "000000"], pos: [0,0]};
 var ground = {body: "#", color: "0000CC"};
 
 function main() {
@@ -28,7 +28,8 @@ function main() {
   var world_str = "";
   for(var i=0; i<h; i++) {
     for(var j=0; j<w; j++) {
-      world_str += "<span style='color: #"+colors[i][j]+";'>"+world[i][j]+"</span>";
+      world_str += "<span style='color: #"+colors[i][j][0]+
+      "; background-color: #"+colors[i][j][1]+";'>"+world[i][j]+"</span>";
     }
     world_str += "<br />";
   }
