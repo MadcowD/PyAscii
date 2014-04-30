@@ -14,16 +14,16 @@
 	
 	<body>
 		<h1>Use the arrow keys.</h1>
-		World height: <input type="number" id="world-height" value="10" onchange="update_world_dimensions()">
+		World height: <input type="number" id="world-height" value="10" onchange="world_height=this.value;">
 		<span style="width: 20px; display: inline-block;"></span>
-		</input>Width: <input type="number" id="world-width" value="30" onchange="update_world_dimensions()"></input>
+		</input>Width: <input type="number" id="world-width" value="30" onchange="world_width=this.value;"></input>
 		
 		<div id="game"></div>
 
 		<table>
 			<th>Key</th>
 			<tr>
-				<td>/</td>
+				<td>^</td>
 				<td>ground</td>
 			</tr>
 			<tr>
@@ -35,7 +35,7 @@
 				<td>spawner</td>
 			</tr>
 			<tr>
-				<td>!</td>
+				<td>Z</td>
 				<td>zombie</td>
 			</tr>
 		</table>

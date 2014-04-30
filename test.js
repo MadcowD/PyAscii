@@ -1,33 +1,40 @@
-var w;
-var h;
+var world_width;
+var world_height;
 
+var ground = {body: "^", color: ["3C3", "630"]};
+
+var actors = [];
 var player = {body: "@", color: ["F00", "000"], pos: [0,0]};
-var ground = {body: "/", color: ["3C3", "630"]};
+  actors.push(player);
+var spawner = {body: "#", color: ["C09", "9CF"], pos: [0,0]};
+  actors.push(spawner);
 
 function main() {
   var world = [];
   var colors = [];
 
   function add_entity(entity, pos) {
+    if(typeof pos === "undefined")
+      pos = entity.pos;
     var x = pos[0]; var y = pos[1];
     world[x][y] = entity.body;
     colors[x][y] = entity.color;
   }
 
-  for(var i=0; i<h; i++) {
+  for(var i=0; i<world_height; i++) {
     world[i] = [];
     colors[i] = [];
 
-    for(var j=0; j<w; j++) {
+    for(var j=0; j<world_width; j++) {
       add_entity(ground, [i, j]);
     }
   }
 
-  add_entity(player, player.pos);
+  add_entity(player);
 
   var world_str = "";
-  for(var i=0; i<h; i++) {
-    for(var j=0; j<w; j++) {
+  for(var i=0; i<world_height; i++) {
+    for(var j=0; j<world_width; j++) {
       world_str += "<span style='color: #"+colors[i][j][0]+
       "; background-color: #"+colors[i][j][1]+";'>"+world[i][j]+"</span>";
     }
@@ -48,23 +55,20 @@ document.addEventListener("keydown", function(event) {
       }
     }
     else if (event.keyCode == 39) { //right
-      if(player.pos[1] < w-1) {
+      if(player.pos[1] < world_width-1) {
         player.pos[1]++;
       }
     }
     else if (event.keyCode == 40) { //down
-      if(player.pos[0] < h-1) {
+      if(player.pos[0] < world_height-1) {
         player.pos[0]++;
       }
     }
 }, true);
 
-function update_world_dimensions() {
-    w = document.getElementById("world-width").value;
-    h = document.getElementById("world-height").value;
-}
-
 window.onload = function() {
-	update_world_dimensions();
-	setInterval(main, 50);
+	world_width = document.getElementById("world-width").value;
+  world_height = document.getElementById("world-height").value;
+	
+  setInterval(main, 50);
 }
