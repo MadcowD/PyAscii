@@ -5,10 +5,11 @@ var player = [0,0];
 
 function main() {
   var world = [];
+  var colors = [];
   for(var i=0; i<=h; i++) {
     var row = [];
     for(var j=0; j<=w; j++) {
-      row.push("_");
+      row.push("a");
     }
     world.push(row);
   }
@@ -16,8 +17,10 @@ function main() {
   world[player[1]][player[0]] = "@";
 
   //you shouldn't need to change below here, instead insert things while it's still an array, above
-  var world_str = world.map(function(x){
-    return x.join("");
+  var world_str = world.map(function(row){
+    return row.map(function(x){
+      return "<span style='color: #"+x+";'>"+x+"</span>";
+    }).join("");
   }).join("<br />");
   document.getElementById("game").innerHTML = world_str;
 }
