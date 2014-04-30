@@ -6,7 +6,7 @@ var ground = {body: "^", color: ["3C3", "630"]};
 var actors = [];
 var player = {body: "@", color: ["F00", "000"], pos: [0,0]};
   actors.push(player);
-var spawner = {body: "#", color: ["C09", "9CF"], pos: [0,0]};
+var spawner = {body: "#", color: ["C09", "9CF"], pos: [8,25]};
   actors.push(spawner);
 
 function main() {
@@ -30,7 +30,9 @@ function main() {
     }
   }
 
-  add_entity(player);
+  actors.forEach(function(actor) {
+    add_entity(actor);
+  });
 
   var world_str = "";
   for(var i=0; i<world_height; i++) {
