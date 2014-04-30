@@ -2,7 +2,7 @@ var w;
 var h;
 
 var player = {body: "@", color: ["FF0000", "000000"], pos: [0,0]};
-var ground = {body: "#", color: "0000CC"};
+var ground = {body: "#", color: ["0000CC"]};
 
 function main() {
   var world = [];
