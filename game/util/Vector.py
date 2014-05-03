@@ -14,9 +14,6 @@ class Vector(object):
     def __sub__(self, other):
         return self + other*-1
 
-    def __rsub__(self, other):
-        return self - other
-
     def __rmul__(self, scalar):
         return self*scalar
 
@@ -27,4 +24,4 @@ class Vector(object):
         return sum(map(lambda tup: tup[0]*tup[1], zip(self.components, other.components)))
 
     def __str__(self):
-        return str(self.components) + "|" + str(self.magnitude
+        return str(self.components) + "|" + str(self.magnitude())
