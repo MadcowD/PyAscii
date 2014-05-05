@@ -11,7 +11,7 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
-        self.terrain = [[Terrain(body="^", color=(0x33CC33, 0x663300))]*size for x in xrange(size)]
+        self.terrain = [[Terrain.Grass]*size for x in xrange(size)]
 
     def input(self, char):
         pass

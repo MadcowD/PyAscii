@@ -8,6 +8,7 @@ class Terrain(Pixel):
     def __init__(self, body, color):
         super(Terrain, self).__init__(body, color)
 
+Terrain.Grass = Terrain(body="^", color=(0x33CC33, 0x663300))
 
 
 
