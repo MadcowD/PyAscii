@@ -8,6 +8,7 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
+        self.terrain = [[Terrain(body="^", color=(0x33CC33, 0x663300))]*n for x in xrange(n)]
 
     def input(self, char):
         pass
@@ -20,7 +21,7 @@ class World(object):
 
 
 
-world = World(12, Entity(Vector(1,1)), None)
+world = World(Vector(100,100), None)
 
 
 
