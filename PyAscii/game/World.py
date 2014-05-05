@@ -14,11 +14,17 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
-        self.terrain = [[Terrain.Grass]*size]*size 
+        self.terrain = [[Terrain.Grass for x in range(size)] for y in range(size)] 
         self.entities = [player]
 
     def input(self, input):
         #this takes in the input from self.request.get('input')
+        if input == "w":
+            self.entities[0].pos -= Vector(0,1)
+            print("cunt")
+        if input == "s":
+            self.entities[0].pos += Vector(0,1)
+
         pass
 
     def update(self):
@@ -35,9 +41,11 @@ class World(object):
 
 
         #TODO:  Render in HTML and return
-        html = "TODO: PUT DAH HTML HERE"
+        for row in camera:
+            print([item.body for item in row])
+        html = "yup"
         return html
 
 
 
-world = World(100, Entity(pos = Vector(0,0), body="@", color=None))
+world = World(10, Entity(pos = Vector(0,0), body="@", color=None))

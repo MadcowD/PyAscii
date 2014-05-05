@@ -3,4 +3,7 @@ sys.path.append("game")
 from World import *
 global world
 
-print(world.render())
+while True:
+    print(world.render())
+    world.input(sys.stdin.read(1))
+    world.update()
