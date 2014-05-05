@@ -1,5 +1,8 @@
-import webapp2
 import time
+import sys
+from Terrain import *
+sys.path.pop()
+sys.path.append("util")
 from Vector import *
 
 class World(object):

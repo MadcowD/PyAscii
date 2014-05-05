@@ -1,3 +1,6 @@
+import sys
+sys.path.pop()
+sys.path.append("util")
 from Pixel import *
 
 class Terrain(object, Pixel):
