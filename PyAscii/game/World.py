@@ -2,7 +2,7 @@ import time
 import sys
 import copy
 from Terrain import *
-import Entity
+from Entity import *
 
 sys.path.pop()
 sys.path.append("util")
@@ -29,8 +29,8 @@ class World(object):
         camera = copy.deepcopy(self.terrain) #COMPOSED OF PIXELS
 
         for ent in self.entities:
-            if(not ((ent.pos.x < 0 or ent.pos.x > size)
-               or (ent.pos.y < 0 or ent.pos.y > size))):
+            if(not ((ent.pos.x < 0 or ent.pos.x > self.size)
+               or (ent.pos.y < 0 or ent.pos.y > self.size))):
                 camera[int(ent.pos.x)][int(ent.pos.y)] = ent
 
 
@@ -40,4 +40,4 @@ class World(object):
 
 
 
-world = World(100, None)
+world = World(100, Entity(pos = Vector(0,0), body="@", color=None))
