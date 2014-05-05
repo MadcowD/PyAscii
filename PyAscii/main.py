@@ -16,16 +16,18 @@
 #
 import webapp2
 import time
+from World import WorldHandler, World
 from util import *
 
 i = 0
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         global i
     	i += 1
         self.response.write( make_html( make_world_string(world) ) )
 
-
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/world', WorldHandler),
+    ('/', MainHandler),
 ], debug=True)
