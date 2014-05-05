@@ -15,10 +15,32 @@
 # limitations under the License.
 #
 import webapp2
+import time
+
+class Entity:
+	def __init__(self, body, color):
+		self.body = body
+		self.color = color
+
+	@property
+	def fg_color(self):
+		return self.color[0]
+
+	@property
+	def bg_color(self):
+		return self.color[1]
+
+ground = Entity(body="^", color=(0x3C3, 0x630))
+world_dimensions = (20,20)
+world = [[ground.body] * world_dimensions[0]] * world_dimensions[1]
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+    	i = 1
+    	while True:
+    		time.sleep(0.5)
+        	self.response.write(i)
+        	i += 1
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
