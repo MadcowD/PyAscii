@@ -30,10 +30,22 @@ class Vector(object):
     def x(self):
         return self.components[0]
 
+    @x.setter
+    def x(self, value):
+        self.components[0] = value
+
     @property
     def y(self):
         return self.components[1]
 
+    @y.setter
+    def x(self, value):
+        self.components[1] = value
+
     @property
     def z(self):
         return self.components[2]
+
+    @z.setter
+    def x(self, value):
+        self.components[2] = value
