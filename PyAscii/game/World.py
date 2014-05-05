@@ -2,10 +2,11 @@ import time
 import sys
 import copy
 from Terrain import *
+import Entity
+
 sys.path.pop()
 sys.path.append("util")
 from Vector import *
-from Entity import Entity
 
 class World(object):
     """The world class which stores entities and value data."""
@@ -27,9 +28,6 @@ class World(object):
         #TODO: Combine list of entities with terrain using entity position.
         camera = copy.deepcopy(self.terrain) #COMPOSED OF PIXELS
 
-<<<<<<< HEAD
-world = World(size=12, Entity(Vector(1,1)), None)
-=======
         for ent in self.entities:
             if(not ((ent.pos.x < 0 or ent.pos.x > size)
                or (ent.pos.y < 0 or ent.pos.y > size))):
@@ -43,7 +41,3 @@ world = World(size=12, Entity(Vector(1,1)), None)
 
 
 world = World(100, None)
-
-
-
->>>>>>> 25e3c07acaf316364ba57a2d751d33cceedf98e2

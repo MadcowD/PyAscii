@@ -2,6 +2,8 @@ import sys
 sys.path.pop()
 sys.path.append("util")
 from Pixel import *
+sys.path.pop()
+sys.path.append("game")
 
 class Terrain(Pixel):
     """The terrain class"""

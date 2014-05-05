@@ -5,8 +5,8 @@ from Pixel import *
 
 class Entity(Pixel):
     """The basic entity class"""
-    def __init__(self, position=None, body="", color=None):
-        self.position = position
+    def __init__(self, pos=None, body="", color=None):
+        self.pos = pos
         super(Entity, self).__init__(body, color)
 
     def update(self, world):
