@@ -16,7 +16,8 @@ class World(object):
         self.terrain = [[Terrain.Grass]*size]*size 
         self.entities = [player]
 
-    def input(self, char):
+    def input(self, input):
+        #this takes in the input from self.request.get('input')
         pass
 
     def update(self):
