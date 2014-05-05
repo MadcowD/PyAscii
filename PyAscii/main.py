@@ -16,6 +16,7 @@
 #
 import webapp2
 import time
+from World import WorldHandler, World
 
 
 #class Entity:
@@ -35,15 +36,14 @@ import time
 #world_dimensions = (20,20)
 #world = [[ground.body] * world_dimensions[0]] * world_dimensions[1]
 
-i = 0
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        global i
-    	i += 1
-        self.response.write(i)
+        self.response.write("WEBSTUFF HERE")
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/world', WorldHandler),
+    ('/', MainHandler),
 ], debug=True)
