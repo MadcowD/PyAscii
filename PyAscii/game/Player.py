@@ -12,10 +12,19 @@ class Player(Entity):
 
 
     def handleInput(self, world, input):
+        if input is not None:
+            if input == "w":
+                self.pos -= Vector(0,1)
+            if input == "s":
+                self.pos += Vector(0,1)
+            if input == "a":
+                self.pos -= Vector(1,0)
+            if input == "d":
+                self.pos += Vector(1,0)
         pass
 
     def update(self, world):
-        self.pos += Vector(1,1)
+        pass
 
 
 

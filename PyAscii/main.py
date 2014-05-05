@@ -27,10 +27,11 @@ from World import *
 class WorldHandler(webapp2.RequestHandler):
     def get(self):
         global world
-        world.update()
 
-        #render and convert to html
+        world.input(self.request.get('input'))
+        world.update()
         view = world.render()
+
         self.response.write(make_html(make_world_string(view)))
 
     def post(self):
@@ -38,7 +39,7 @@ class WorldHandler(webapp2.RequestHandler):
 
         #send json requests to /world 
         #post your input in a post variable called inpiut
-        world.input(self.request.get('input'))
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
