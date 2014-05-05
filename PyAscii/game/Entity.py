@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import sys
 sys.path.append("..")
+=======
+sys.path.pop()
+>>>>>>> 25e3c07acaf316364ba57a2d751d33cceedf98e2
 sys.path.append("util")
 from Pixel import *
 

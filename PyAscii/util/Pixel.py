@@ -2,10 +2,13 @@ class Pixel(object):
 	def __init__(self, body, color):
 		self.body = body
 		self.color = color
+<<<<<<< HEAD
 
 	@staticmethod
 	def _hex(n):
 		return "{0:0{1}x}".format(n,6)
+=======
+>>>>>>> 25e3c07acaf316364ba57a2d751d33cceedf98e2
 
 	@property
 	def fg_color(self):
