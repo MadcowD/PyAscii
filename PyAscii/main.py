@@ -15,17 +15,23 @@
 # limitations under the License.
 #
 import webapp2
-import time
 import sys
+import time
+sys.path.append("util")
+from util import *
+sys.path.pop()
 sys.path.append("game")
-from World import World
+from World import *
 
 
 class WorldHandler(webapp2.RequestHandler):
     def get(self):
         global world
         world.update()
-        self.response.write(world.render())
+
+        #render and convert to html
+        view = world.render()
+        self.response.write(make_html(make_world_string(view)))
 
     def post(self):
         global world
@@ -36,7 +42,7 @@ class WorldHandler(webapp2.RequestHandler):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write( make_html( make_world_string(world) ) )
+        self.response.write("This should serve the main page")
 
 app = webapp2.WSGIApplication([
     ('/world', WorldHandler),
