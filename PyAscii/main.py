@@ -23,8 +23,15 @@ from util import *
 class WorldHandler(webapp2.RequestHandler):
     def get(self):
         global world
-        self.response.write("hi I am the world for this game I guess")
-        self.response.write("<br/>here is world: " + world.render())
+        world.update()
+        self.response.write(world.render())
+
+    def post(self):
+        global world
+
+        #send json requests to /world 
+        #post your input in a post variable called inpiut
+        world.input(self.request.get('input'))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
