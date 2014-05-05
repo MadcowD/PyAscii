@@ -19,12 +19,15 @@ import time
 from World import WorldHandler, World
 from util import *
 
-i = 0
+
+class WorldHandler(webapp2.RequestHandler):
+    def get(self):
+        global world
+        self.response.write("hi I am the world for this game I guess")
+        self.response.write("<br/>here is world: " + world.render())
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        global i
-    	i += 1
         self.response.write( make_html( make_world_string(world) ) )
 
 app = webapp2.WSGIApplication([
