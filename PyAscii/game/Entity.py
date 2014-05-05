@@ -1,8 +1,11 @@
+import sys
+sys.path.append("..")
+sys.path.append("util")
 from Pixel import *
 
-class Entity(object, Pixel):
+class Entity(Pixel):
     """The basic entity class"""
-    def __init__(self, position, body, color):
+    def __init__(self, position=None, body="", color=None):
         self.position = position
         super(Entity, self).__init__(body, color)
 
@@ -10,6 +13,3 @@ class Entity(object, Pixel):
         """Updates the entity based on the world around it"""
 
         pass
-        
-
-

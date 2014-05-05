@@ -16,8 +16,11 @@
 #
 import webapp2
 import time
-from World import World
 from util import *
+
+import sys
+sys.path.append("game")
+from World import World
 
 
 class WorldHandler(webapp2.RequestHandler):
