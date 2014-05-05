@@ -8,7 +8,7 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
-        self.terrain = [[Terrain(body="^", color=(0x33CC33, 0x663300))]*n for x in xrange(n)]
+        self.terrain = [[Terrain(body="^", color=(0x33CC33, 0x663300))]*size for x in xrange(size)]
 
     def input(self, char):
         pass
@@ -17,11 +17,16 @@ class World(object):
         pass
 
     def render(self):
-        return "TODO: PUT THE SPAN GIRD HERE"
+        #TODO: Combine list of entities with terrain using entity position.
+
+
+        #TODO:  Render in HTML and return
+        html = "TODO: PUT DAH HTML HERE"
+        return html
 
 
 
-world = World(Vector(100,100), None)
+world = World(100, None)
 
 
 
