@@ -25,3 +25,15 @@ class Vector(object):
 
     def __str__(self):
         return str(self.components) + "|" + str(self.magnitude())
+    
+    @property
+    def x(self):
+        return self.components[0]
+
+    @property
+    def y(self):
+        return self.components[1]
+
+    @property
+    def z(self):
+        return self.components[2]
