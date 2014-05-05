@@ -2,7 +2,6 @@ class Pixel(object):
 	def __init__(self, body, color):
 		self.body = body
 		self.color = color
-		self.pos = pos
 
 	@property
 	def fg_color(self):

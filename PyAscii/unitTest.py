@@ -1,5 +1,6 @@
 import sys
 sys.path.append("game")
-from World import World
+from World import *
+global world
 
 print(world.render())

@@ -1,3 +1,5 @@
+sys.path.pop()
+sys.path.append("util")
 from Pixel import *
 
 class Entity(object, Pixel):
