@@ -16,7 +16,7 @@
 #
 import webapp2
 import time
-from World import WorldHandler, World
+from World import World
 from util import *
 
 

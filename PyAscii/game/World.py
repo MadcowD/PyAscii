@@ -8,7 +8,6 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
-        
 
     def input(self, char):
         pass
@@ -21,7 +20,7 @@ class World(object):
 
 
 
-world = World()
+world = World(12, Entity(Vector(1,1)), None)
 
 
 

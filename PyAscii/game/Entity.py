@@ -4,7 +4,6 @@ class Entity(object, Pixel):
     """The basic entity class"""
     def __init__(self, position, body, color):
         self.position = position
-        
         super(Entity, self).__init__(body, color)
 
     def update(self, world):
