@@ -14,16 +14,14 @@ class World(object):
     def __init__(self, size, player):
         self.size = size
         self.player = player
-        self.terrain = [[Terrain.Grass for x in range(size)] for y in range(size)] 
+        print(size.x)
+        self.terrain = [[Terrain.Grass for y in range(size.y)] for x in range(size.xd)] 
+        print(len(self.terrain))
         self.entities = [player]
 
     def input(self, input):
         #this takes in the input from self.request.get('input')
-        if input == "w":
-            self.entities[0].pos -= Vector(0,1)
-            print("cunt")
-        if input == "s":
-            self.entities[0].pos += Vector(0,1)
+        self.player.input(input)
 
         pass
 
@@ -35,17 +33,22 @@ class World(object):
         camera = copy.deepcopy(self.terrain) #COMPOSED OF PIXELS
 
         for ent in self.entities:
-            if(not ((ent.pos.x < 0 or ent.pos.x > self.size)
-               or (ent.pos.y < 0 or ent.pos.y > self.size))):
+            if(not ((ent.pos.x < 0 or ent.pos.x > self.size.x)
+               or (ent.pos.y < 0 or ent.pos.y > self.size.y))):
                 camera[int(ent.pos.x)][int(ent.pos.y)] = ent
 
 
         #TODO:  Render in HTML and return
-        for row in camera:
-            print([item.body for item in row])
-        html = "yup"
+        html = ""
+
+        for y in range(self.size.y):
+            for x in range(self.size.x):
+                html += camera[x][y].body
+
+            html+= "\n"
+
         return html
 
 
 
-world = World(10, Entity(pos = Vector(0,0), body="@", color=None))
+world = World(Vector(79,23), Entity(pos = Vector(0,0), body="@", color=None))

@@ -13,29 +13,30 @@ player = Entity(position=(0,0), body="@", color=(0xFF0000, 0x000000))
 entities.append(player)
 
 def make_html(content):
-	master_html = """
-	<html>
-		<head>
-			<link type="text/css" rel="stylesheet" href="stylesheet.css">
-		</head>
-		<body>
-			<div id="game">{}</div>
-		</body>
-	</html>
-	"""
-	return master_html.format(content)
+    master_html = """
+    <html>
+        <head>
+            <link type="text/css" rel="stylesheet" href="stylesheet.css">
+        </head>
+        <body>
+            <div id="game">{}</div>
+        </body>
+    </html>
+    """
+    return master_html.format(content)
 
 def make_world_string(world):
-	world = [row[:] for row in world]
-	
-	global entities
-	for entity in entities:
-		pos = entity.pos
-		world[pos[1]][pos[0]] = entity
+    world = [row[:] for row in world]
+    
+    global entities
+    for entity in entities:
+        pos = entity.pos
+        world[pos[1]][pos[0]] = entity
 
-	world_str = ""
-	for row in world:
-		for char in row:
-			world_str += "<span style=\"color: #{}; background-color: #{};\">{}</span>".format(char.fg_color, char.bg_color, char)
-		world_str += "<br />"
-	return world_str
+    world_str = ""
+    for row in world:
+        for char in row:
+            world_str += "<span style=\"color: #{}; background-color: #{};\">{}</span>"\
+                .format(char.fg_color, char.bg_color, char)
+        world_str += "<br />"
+    return world_str
