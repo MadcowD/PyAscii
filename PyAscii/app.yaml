@@ -13,6 +13,10 @@ handlers:
   static_files: stylesheet.css
   upload: stylesheet\.css
 
+- url: /keyboard\.js
+  static_files: keyboard.js
+  upload: keyboard\.js
+
 - url: .*
   script: main.app
 
