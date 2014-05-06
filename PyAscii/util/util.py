@@ -6,6 +6,7 @@ def make_html(content):
     <html>
         <head>
             <link type="text/css" rel="stylesheet" href="stylesheet.css">
+            <script type="text/css" src="keyboard"></script>
         </head>
         <body>
             <div id="game">{}</div>

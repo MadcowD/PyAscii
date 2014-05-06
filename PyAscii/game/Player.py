@@ -13,13 +13,13 @@ class Player(Entity):
 
     def handleInput(self, world, input):
         if input is not None:
-            if input == "w":
+            if input == "UP":
                 self.pos -= Vector(0,1)
-            if input == "s":
+            if input == "DOWN":
                 self.pos += Vector(0,1)
-            if input == "a":
+            if input == "LEFT":
                 self.pos -= Vector(1,0)
-            if input == "d":
+            if input == "RIGHT":
                 self.pos += Vector(1,0)
         pass
 
