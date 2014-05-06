@@ -11,9 +11,15 @@ window.onload = function() {
 			68: "RIGHT",
 			83: "DOWN",
 		};
-		input_code = input_map[event.keyCode];
-		var request = new XMLHttpRequest();
-		request.open("GET", window.location+"?input="+input_code); //async?
-		request.send();
-	}, true);	
+		var input_code = input_map[event.keyCode];
+		if(typeof input_code == "string"){
+			var request = new XMLHttpRequest();
+			request.open("POST", window.location); //async?
+			request.send("{input: "+input_code+"}");
+			log("{input: "+input_code+"}");
+		}
+	}, true);
+	function log(text) {
+		document.getElementById("log").innerHTML += text + "<br />";
+	}
 };

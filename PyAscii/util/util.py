@@ -13,6 +13,7 @@ def make_html(content):
         </head>
         <body>
             <div id="game">{}</div>
+            <div id="log"></div>
             Player @ ({},{})
         </body>
     </html>
