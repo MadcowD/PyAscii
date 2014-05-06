@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
 import sys
+sys.path.append("game")
+from World import *
+
 def make_html(content):
     master_html = """
     <html>
@@ -14,7 +17,7 @@ def make_html(content):
         </body>
     </html>
     """
-    return master_html.format(content, 1, 1)
+    return master_html.format(content, world.player.pos.x, world.player.pos.y)
 
 def make_world_string(world):
     world_str = ""
