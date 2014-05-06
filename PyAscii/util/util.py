@@ -10,10 +10,11 @@ def make_html(content):
         </head>
         <body>
             <div id="game">{}</div>
+            Player @ ({},{})
         </body>
     </html>
     """
-    return master_html.format(content)
+    return master_html.format(content, 1, 1)
 
 def make_world_string(world):
     world_str = ""

@@ -14,13 +14,17 @@ class Player(Entity):
     def handleInput(self, world, input):
         if input is not None:
             if input == "UP":
-                self.pos -= Vector(0,1)
+                if self.pos.y > 0:
+                    self.pos -= Vector(0,1)
             if input == "DOWN":
-                self.pos += Vector(0,1)
+                if self.pos.y < world.size:
+                    self.pos += Vector(0,1)
             if input == "LEFT":
-                self.pos -= Vector(1,0)
+                if self.pos.x > 0:
+                    self.pos -= Vector(1,0)
             if input == "RIGHT":
-                self.pos += Vector(1,0)
+                if self.pos.x < world.size:
+                    self.pos += Vector(1,0)
         pass
 
     def update(self, world):
