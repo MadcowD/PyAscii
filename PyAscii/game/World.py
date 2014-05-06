@@ -34,15 +34,7 @@ class World(object):
     def render(self):
         camera = copy.deepcopy(self.terrain) #COMPOSED OF PIXELS
 
-        for ent in self.entities:
-            if(not ((ent.pos.x < 0 or ent.pos.x > self.size.x)
-               or (ent.pos.y < 0 or ent.pos.y > self.size.y))):
-                camera[int(ent.pos.x)][int(ent.pos.y)] = ent
-
-            #TODO: Enable camera size and make a camera object
-            #This would return self.camera.render(buffer)
-            #camera would then take the buffer and snip the size.
-
+        
         return camera
 
 
