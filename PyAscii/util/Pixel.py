@@ -17,3 +17,5 @@ class Pixel(object):
 
 	def __str__(self):
 		return self.body
+
+Pixel.Black = Pixel("x", (0x111111, 0x000000))

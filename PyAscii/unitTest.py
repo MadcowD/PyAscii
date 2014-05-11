@@ -7,9 +7,9 @@ global world
 while True:
     view = world.render()
 
-    for y in range(world.size.y):
+    for y in range(len(view[0])):
         line = ""
-        for x in range(world.size.x):
+        for x in range(len(view)):
             line += view[x][y].__str__()
 
         print(line)

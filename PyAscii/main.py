@@ -17,6 +17,7 @@
 import webapp2
 import sys
 import time
+import logging
 sys.path.append("util")
 from util import *
 sys.path.pop()
@@ -27,18 +28,17 @@ from World import *
 class WorldHandler(webapp2.RequestHandler):
     def get(self):
         global world
-
-        world.input(self.request.get('input'))
         world.update()
         view = world.render()
-
         self.response.write(make_html(make_world_string(view)))
 
     def post(self):
         global world
+        world.input(self.request.get('input'))
+        logging.info(self.request.get('input'))
+        logging.info("HEY")
 
-        #send json requests to /world 
-        #post your input in a post variable called inpiut
+
 
 
 class MainHandler(webapp2.RequestHandler):

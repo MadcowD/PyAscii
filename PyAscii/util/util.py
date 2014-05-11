@@ -5,20 +5,8 @@ sys.path.append("game")
 from World import *
 
 def make_html(content):
-    master_html = """
-    <html>
-        <head>
-            <link type="text/css" rel="stylesheet" href="stylesheet.css">
-            <script type="text/javascript" src="keyboard.js"></script>
-        </head>
-        <body>
-            <div id="game">{}</div>
-            <div id="log"></div>
-            Player @ ({},{})
-        </body>
-    </html>
-    """
-    return master_html.format(content, world.player.pos.x, world.player.pos.y)
+    master_html = "{}"
+    return master_html.format(content)
 
 def make_world_string(world):
     world_str = ""

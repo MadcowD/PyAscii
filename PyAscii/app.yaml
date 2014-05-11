@@ -13,13 +13,20 @@ handlers:
   static_files: stylesheet.css
   upload: stylesheet\.css
 
-- url: /keyboard\.js
-  static_files: keyboard.js
-  upload: keyboard\.js
+- url: /client\.js
+  static_files: client.js
+  upload: client\.js
 
-- url: .*
+
+- url: /
+  static_files: index.html
+  upload: index\.html
+
+- url: /.*
   script: main.app
 
 libraries:
 - name: webapp2
   version: "2.5.2"
+- name: numpy
+  version: "latest"
