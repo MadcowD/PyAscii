@@ -14,5 +14,4 @@ while True:
 
         print(line)
 
-    world.input(sys.stdin.read(1))
     world.update()

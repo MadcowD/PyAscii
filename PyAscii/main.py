@@ -18,6 +18,8 @@ import webapp2
 import sys
 import time
 import logging
+from google.appengine.ext import deferred
+from google.appengine.api import taskqueue
 sys.path.append("util")
 from util import *
 sys.path.pop()
@@ -25,18 +27,20 @@ sys.path.append("game")
 from World import *
 
 
+    
+
+
 class WorldHandler(webapp2.RequestHandler):
     def get(self):
         global world
-        world.update()
         view = world.render()
+        world.update()
         self.response.write(make_html(make_world_string(view)))
 
     def post(self):
         global world
         world.input(self.request.get('input'))
         logging.info(self.request.get('input'))
-        logging.info("HEY")
 
 
 
