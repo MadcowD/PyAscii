@@ -4,7 +4,7 @@ window.onload = function () {
 		getWorld();
 	},1000);
 
-	getWorld();
+	// getWorld();
 	document.addEventListener("keydown", function(event) {
 		var input_map = {
 			37: "LEFT", //these four are arrow keys
